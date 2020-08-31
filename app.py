@@ -18,12 +18,7 @@ def listar():
     c = it.combinations(range(1,interval+1),n_column)
     filtered = jsonify(list(it.filterfalse(lambda x: x[0:rg] != f, c)))
     return filtered
-@app.route('/download')
-def download():
-    file = literal_eval(request.args.get('file', []))
-    if file != []:
-        return jsonify(pd.Dataframe(file, columns=[i for i in range(1,n_column)]).to_json())
-    return jsonify(g_data.to_csv())
+
 
 if __name__ =="__main__":
     app.run(debug=True)
