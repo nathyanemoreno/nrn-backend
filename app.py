@@ -5,7 +5,6 @@ from ast import literal_eval
 
 app = Flask(__name__)
 
-g_data = pd.read_csv('./data/data.csv')
 n_column = 15
 interval = 25
 @app.route('/')
