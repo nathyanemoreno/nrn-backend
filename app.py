@@ -1,10 +1,11 @@
-from flask import Flask, request, redirect, url_for, jsonify
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 import pandas as pd
 import itertools as it
 from ast import literal_eval
 
 app = Flask(__name__)
-
+CORS(app)
 
 # c = it.combinations(range(1,interval+1),n_column)
 
