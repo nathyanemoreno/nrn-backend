@@ -17,7 +17,7 @@ def listar():
     end =  literal_eval(request.args.get('end', None))
     n_column = 15
     interval = 25
-    if (f != None):
+    if (f != ()):
         rg = len(f)
         filtered = jsonify(list(it.filterfalse(lambda x: x[0:rg] != f, it.combinations(range(1,interval+1),n_column))))
         return filtered
