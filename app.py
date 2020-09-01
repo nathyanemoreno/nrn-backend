@@ -7,8 +7,6 @@ from ast import literal_eval
 app = Flask(__name__)
 CORS(app)
 
-# c = it.combinations(range(1,interval+1),n_column)
-
 @app.route('/')
 def index():
     return "<h1>Sistema de combinações</h1>"
