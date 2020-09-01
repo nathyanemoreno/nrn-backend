@@ -12,7 +12,7 @@ def index():
     return "<h1>Sistema de combinações</h1>"
 @app.route('/listar',methods=['GET', 'POST'] )
 def listar():
-    f = literal_eval(request.args.get('f', None))
+    f = tuple(literal_eval(request.args.get('f', None)))
     start = literal_eval(request.args.get('start', None))
     end =  literal_eval(request.args.get('end', None))
     n_column = 15
