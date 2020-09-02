@@ -19,7 +19,7 @@ def listar():
     interval = 25
     if (f != ()):
         rg = len(f)
-        filtered = jsonify(list(it.filterfalse(lambda x: x[0:rg] != f, it.combinations(range(1,interval+1),n_column))))
+        filtered = jsonify(list(it.islice(it.filterfalse(lambda x: x[0:rg] != f, it.combinations(range(1,interval+1),n_column)), start, end)))
         return filtered
     else:
         return jsonify (list(it.islice(it.combinations(range(1,interval+1),n_column), start, end)))
